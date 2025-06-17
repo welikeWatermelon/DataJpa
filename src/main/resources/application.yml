@@ -1,0 +1,25 @@
+spring:
+  datasource:
+  url: jdbc:h2:tcp://localhost/~/datajpa
+  username: sa
+  password:
+  driver-class-name: org.h2.Driver
+
+  jpa:
+    #  jpa 쿼리를 콘솔에 로그를 찍는거 (만약 true 라면, system.out 을 쓰는것임)
+    show_sql: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+  #      show_sql: false
+        format_sql: true
+
+# jpa 쿼리를 콘솔이 아닌 로그 파일로 남기는 것
+logging:
+  level:
+    org.hibernate.SQL: debug # 이쁘게 나오게 하는 것
+    p6spy: debug
+
+  # 파라미터까지 나오게 하는 것
+#  org.hibernate.type: trace
